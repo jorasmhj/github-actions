@@ -1,6 +1,14 @@
 name: Shell Commands
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+      - 'feature/*'
+      - 'feature/**'
+      - '!feature/featC'
+  pull_request:
+    types: [opened]
 
 jobs:
   run-shell-command:
